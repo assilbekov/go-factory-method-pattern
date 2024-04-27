@@ -23,16 +23,6 @@ func (l *Laptop) PrintDetails() {
 	fmt.Println("Laptop")
 }
 
-type Server struct{}
-
-func (s *Server) GetType() string {
-	return "Server"
-}
-
-func (s *Server) PrintDetails() {
-	fmt.Println("Server")
-}
-
 type Client struct{}
 
 func (c *Client) GetType() string {
