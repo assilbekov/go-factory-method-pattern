@@ -23,16 +23,6 @@ func (l *Laptop) PrintDetails() {
 	fmt.Println("Laptop")
 }
 
-type Client struct{}
-
-func (c *Client) GetType() string {
-	return "Client"
-}
-
-func (c *Client) PrintDetails() {
-	fmt.Println("Client")
-}
-
 func New(typeName string) Computer {
 	switch typeName {
 	case LaptopType:
