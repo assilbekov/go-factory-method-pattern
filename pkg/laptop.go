@@ -11,3 +11,7 @@ func (l *Laptop) GetType() string {
 func (l *Laptop) PrintDetails() {
 	fmt.Println("Laptop")
 }
+
+func NewLaptop() Computer {
+	return &Laptop{}
+}

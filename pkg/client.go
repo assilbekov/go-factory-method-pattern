@@ -11,3 +11,7 @@ func (c *Client) GetType() string {
 func (c *Client) PrintDetails() {
 	fmt.Println("Client")
 }
+
+func NewClient() Computer {
+	return &Client{}
+}

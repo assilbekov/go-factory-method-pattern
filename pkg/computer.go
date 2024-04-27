@@ -16,11 +16,11 @@ type Computer interface {
 func New(typeName string) Computer {
 	switch typeName {
 	case LaptopType:
-		return &Laptop{}
+		return NewLaptop()
 	case ServerType:
-		return &Server{}
+		return NewServer()
 	case ClientType:
-		return &Client{}
+		return NewClient()
 	default:
 		fmt.Println("Unknown type")
 		return nil

@@ -11,3 +11,7 @@ func (s *Server) GetType() string {
 func (s *Server) PrintDetails() {
 	fmt.Println("Server")
 }
+
+func NewServer() Computer {
+	return &Server{}
+}
