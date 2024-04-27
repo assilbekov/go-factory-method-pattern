@@ -2,6 +2,12 @@ package pkg
 
 import "fmt"
 
+const (
+	ServerType = "server"
+	ClientType = "client"
+	LaptopType = "laptop"
+)
+
 type Computer interface {
 	GetType() string
 	PrintDetails()
@@ -17,10 +23,34 @@ func (l *Laptop) PrintDetails() {
 	fmt.Println("Laptop")
 }
 
+type Server struct{}
+
+func (s *Server) GetType() string {
+	return "Server"
+}
+
+func (s *Server) PrintDetails() {
+	fmt.Println("Server")
+}
+
+type Client struct{}
+
+func (c *Client) GetType() string {
+	return "Client"
+}
+
+func (c *Client) PrintDetails() {
+	fmt.Println("Client")
+}
+
 func New(typeName string) Computer {
 	switch typeName {
-	case "laptop":
+	case LaptopType:
 		return &Laptop{}
+	case ServerType:
+		return &Server{}
+	case ClientType:
+		return &Client{}
 	default:
 		fmt.Println("Unknown type")
 		return nil
